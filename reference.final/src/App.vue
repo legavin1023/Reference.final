@@ -10,7 +10,7 @@
       <span v-if="selectedSkin === 'Simple'">
         <span class="skinLogo">로고</span> 제목없음 - i want to go home 메모장
       </span>
-      <span @click="showBugModal = !showBugModal">벌레잡기</span>
+      <span class="bug" @click="showBugModal = !showBugModal">벌레잡기</span>
     </nav>
     <div
       class="modal-overlay"
@@ -21,38 +21,40 @@
       <button @click="showBugModal = !showBugModal">x</button>
       <p>버그를 발견하셨나요?</p>
       <p>이쪽으로 메일을 남겨주세요!</p>
-      <p>nugbugreport@gmail.com</p>
+      <p class="email">nugbugreport@gmail.com</p>
     </div>
-    <div v-if="$route.meta.showSkinButtons">
+    <div class="skinBox" v-if="$route.meta.showSkinButtons">
       <div>
         <p>스킨을 선택하세요</p>
-        <label for="Ewxel">Ewxel</label>
-        <input
-          type="radio"
-          name="skin"
-          value="Ewxel"
-          id="Ewxel"
-          v-model="selectedSkin"
-        />
-        <label for="Adude">Adude</label>
-        <input
-          type="radio"
-          name="skin"
-          value="Adude"
-          id="Adude"
-          v-model="selectedSkin"
-        />
-        <label for="Simple">Simple</label
-        ><input
-          type="radio"
-          name="skin"
-          value="Simple"
-          id="Simple"
-          v-model="selectedSkin"
-        />
+        <div>
+          <input
+            type="radio"
+            name="skin"
+            value="Ewxel"
+            id="Ewxel"
+            v-model="selectedSkin"
+          />
+          <label for="Ewxel">Ewxel</label>
+          <input
+            type="radio"
+            name="skin"
+            value="Adude"
+            id="Adude"
+            v-model="selectedSkin"
+          />
+          <label for="Adude">Adude</label>
+          <input
+            type="radio"
+            name="skin"
+            value="Simple"
+            id="Simple"
+            v-model="selectedSkin"
+          />
+          <label for="Simple">Simple</label>
+        </div>
       </div>
     </div>
-    <router-view />
+    <router-view :selectedSkin="selectedSkin" />
   </div>
 </template>
 <script>
@@ -65,8 +67,6 @@ export default {
   },
   computed: {
     skin() {
-      console.log(this.selectedSkin);
-
       switch (this.selectedSkin) {
         case "Ewxel":
           return "Ewxel";
