@@ -6,10 +6,20 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "splash",
+    component: () => import("@/views/splashPage.vue"),
+    meta: {
+      showSkinButtons: true,
+      showNav: false,
+    },
+  },
+  {
+    path: "/reference.final",
     name: "reference.final",
     component: () => import("@/views/mainPage.vue"),
     meta: {
       showSkinButtons: true,
+      showNav: true,
     },
   },
   {
@@ -18,6 +28,7 @@ const routes = [
     component: () => import("@/views/5mokGame.vue"),
     meta: {
       showSkinButtons: false,
+      showNav: true,
     },
   },
   {
@@ -26,6 +37,16 @@ const routes = [
     component: () => import("@/views/bingoGame.vue"),
     meta: {
       showSkinButtons: false,
+      showNav: true,
+    },
+  },
+  {
+    path: "/*",
+    name: "404",
+    component: () => import("@/views/404Page.vue"),
+    meta: {
+      showSkinButtons: false,
+      showNav: false,
     },
   },
 ];
