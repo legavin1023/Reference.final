@@ -74,13 +74,13 @@
           />
         </svg>
       </div>
-      <div class="gameBox">
+      <div class="gameTypeBox">
         <div>
           <div>
             <input
               type="radio"
               name="game"
-              value="5mok"
+              value="5mokLoding"
               id="5mok"
               v-model="selectedPage"
             />
@@ -105,7 +105,7 @@
             <input
               type="radio"
               name="game"
-              value="bingo"
+              value="bingoLoding"
               id="bingo"
               v-model="selectedPage"
             />
@@ -158,7 +158,7 @@ export default {
   data() {
     return {
       inputValue: "",
-      selectedPage: "5mok",
+      selectedPage: "5mokLoding",
       showCreditModal: false,
       selectedSkinProps: this.selectedSkin,
     };

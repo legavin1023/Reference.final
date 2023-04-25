@@ -23,18 +23,54 @@ const routes = [
     },
   },
   {
-    path: "/5mok",
-    name: "5mok",
-    component: () => import("@/views/5mokGame.vue"),
+    path: "/5mokLoding",
+    name: "5mokLoding",
+    component: () => import("@/views/5mok/5mokGameLoding.vue"),
     meta: {
       showSkinButtons: false,
       showNav: true,
     },
   },
   {
-    path: "/bingo",
-    name: "bingo",
-    component: () => import("@/views/bingoGame.vue"),
+    path: "/5mokJoin",
+    name: "5mokJoin",
+    component: () => import("@/views/5mok/5mokGameJoin.vue"),
+    meta: {
+      showSkinButtons: false,
+      showNav: true,
+    },
+  },
+  {
+    path: "/5mokEnd",
+    name: "5mokEnd",
+    component: () => import("@/views/5mok/5mokGameEnd.vue"),
+    meta: {
+      showSkinButtons: false,
+      showNav: true,
+    },
+  },
+  {
+    path: "/bingoLoding",
+    name: "bingoLoding",
+    component: () => import("@/views/bingo/bingoGameLoding.vue"),
+    meta: {
+      showSkinButtons: false,
+      showNav: true,
+    },
+  },
+  {
+    path: "/bingoJoin",
+    name: "bingoJoin",
+    component: () => import("@/views/bingo/bingoGameJoin.vue"),
+    meta: {
+      showSkinButtons: false,
+      showNav: true,
+    },
+  },
+  {
+    path: "/bingoEnd",
+    name: "bingoEnd",
+    component: () => import("@/views/bingo/bingoGameEnd.vue"),
     meta: {
       showSkinButtons: false,
       showNav: true,
