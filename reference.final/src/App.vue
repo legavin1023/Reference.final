@@ -11,19 +11,13 @@
         <span v-if="selectedSkin === 'Simple'">
           <span class="skinLogo">로고</span> 제목없음 - i want to go home 메모장
         </span>
-        <span class="bug" @click="showBugModal = !showBugModal">벌레잡기</span>
+        <span class="bug" @click="showModalBug = true">벌레잡기</span>
+        <bugModal
+          :show-modal-bug="showModalBug"
+          @close="showModalBug = false"
+        />
       </nav>
-      <div
-        class="modal-overlay"
-        v-show="showBugModal"
-        @click="showBugModal = !showBugModal"
-      ></div>
-      <div class="nugbugReport" v-show="showBugModal">
-        <button @click="showBugModal = !showBugModal">x</button>
-        <p>버그를 발견하셨나요?</p>
-        <p>이쪽으로 메일을 남겨주세요!</p>
-        <p class="email">nugbugreport@gmail.com</p>
-      </div>
+
       <div class="skinBox" v-if="$route.meta.showSkinButtons">
         <div>
           <p>스킨을 선택하세요</p>
@@ -60,11 +54,12 @@
   </div>
 </template>
 <script>
+import bugModal from "@/components/bugModal.vue";
 export default {
   data() {
     return {
       selectedSkin: "Ewxel",
-      showBugModal: false,
+      showModalBug: false,
       nobackCheck: false,
     };
   },
@@ -82,7 +77,9 @@ export default {
       }
     },
   },
-
+  updated() {
+    console.log(this.showModalBug);
+  },
   watch: {
     $route: function (to) {
       if (to.path === "/") {
@@ -99,6 +96,9 @@ export default {
       document.getElementById("app").classList.remove("noback");
     }
     next();
+  },
+  components: {
+    bugModal,
   },
 };
 </script>

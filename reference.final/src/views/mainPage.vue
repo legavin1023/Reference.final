@@ -1,35 +1,10 @@
 <template>
   <div>
-    <div class="dropdown">
-      <div
-        class="modal-overlay"
-        v-show="showCreditModal"
-        @click="showCreditModal = !showCreditModal"
-      ></div>
-      <ul class="showCreditModal" v-show="showCreditModal">
-        <li>
-          <span>team</span>
-          <p>NugBug</p>
-        </li>
-        <li>
-          <span>planner</span>
-          <p>김쌍자</p>
-        </li>
-        <li>
-          <span>designer</span>
-          <p>홍게</p>
-        </li>
-        <li>
-          <span>Developer</span>
-          <p>옥시/백엔ㅎㅎ</p>
-        </li>
-      </ul>
-    </div>
     <div class="bodyBox" v-bind:class="selectedSkinProps">
       <div class="title">
         <button
           class="dropdown-toggle"
-          @click="showCreditModal = !showCreditModal"
+          @click="showModalCradit = !showModalCradit"
         >
           credit
           <svg
@@ -44,6 +19,12 @@
             <path d="M3.81666 5L6.86666 2H0.766663L3.81666 5Z" fill="#C0CBBF" />
           </svg>
         </button>
+        <creditModal
+          class="notTitle"
+          :show-modal-cradit="showModalCradit"
+          @close="showModalCradit = false"
+        />
+
         <div>
           <div>
             <p>Reference.final</p>
@@ -153,18 +134,20 @@
 </template>
 
 <script>
+import creditModal from "@/components/creditModal.vue";
 export default {
   props: ["selectedSkin"],
   data() {
     return {
       inputValue: "",
       selectedPage: "5mokLoding",
-      showCreditModal: false,
+      showModalCradit: false,
       selectedSkinProps: this.selectedSkin,
     };
   },
   updated() {
     console.log(this.selectedSkinProps);
+    console.log(this.showModalCradit);
   },
   methods: {
     start() {
@@ -177,6 +160,9 @@ export default {
     selectedSkin: function (newVal) {
       this.selectedSkinProps = newVal;
     },
+  },
+  components: {
+    creditModal,
   },
 };
 </script>
