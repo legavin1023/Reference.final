@@ -1,0 +1,681 @@
+//--------------- 폰트
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 100;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.eot?#iefix") format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Thin.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 200;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraLight.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraLight.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraLight.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraLight.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraLight.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Light.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Light.eot?#iefix") format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Light.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Light.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Light.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.eot?#iefix") format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.eot?#iefix") format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-SemiBold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.eot?#iefix") format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraBold.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraBold.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraBold.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraBold.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-ExtraBold.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 900;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.eot");
+  src:
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.eot?#iefix") format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.woff2") format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.woff") format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/pretendard/Pretendard-Black.ttf") format("truetype");
+  font-display: swap;
+}
+//--------------- 폰트
+
+//--------------- 바디
+* {
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app {
+  text-align: center;
+  width: 360px;
+  height: calc(800px - 42px);
+  overflow: hidden;
+  border: 1px solid #dcdcdc;
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-style: normal;
+}
+input[type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+//--------------- 바디
+
+//--------------- 네비
+nav {
+  width: 360px;
+  height: 40px;
+  display: flex !important;
+  justify-content: space-between;
+  .bug {
+    text-decoration: underline;
+  }
+
+  span {
+    line-height: 40px;
+    font-size: 10px;
+  }
+  > span:first-of-type {
+    padding-left: 16px;
+  }
+  > span:last-of-type {
+    padding-right: 16px;
+    cursor: pointer;
+  }
+  .skinLogo {
+    display: inline-block;
+    position: relative;
+    top: 12px;
+    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+    text-indent: -9999px;
+    background: url("@/assets/image/icon/ewxelLogo.svg");
+  }
+}
+.nugbugReport {
+  position: absolute;
+  z-index: 10;
+  width: 360px;
+  background: #fff;
+  padding: 20px 0px;
+  font-weight: 500;
+  font-size: 10px;
+  color: #585858;
+  .email {
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    text-decoration: underline;
+  }
+}
+.showCreditModal {
+  position: absolute;
+  z-index: 10;
+  width: 360px;
+  background: #fff;
+  padding: 20px 0px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+}
+
+.skinBox {
+  width: 100%;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  > div {
+    width: 328px;
+    height: 36px;
+    display: flex;
+    justify-content: space-around;
+    line-height: 36px;
+    > div {
+      input[type="radio"] {
+        position: relative;
+        top: -1px;
+        margin-left: 16px;
+      }
+
+      input[type="radio"]:checked + label {
+        font-weight: 600;
+      }
+    }
+  }
+}
+//--------------- 네비
+//--------------- 메인
+.bodyBox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .title {
+    margin-top: 119px;
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      > div {
+        padding-left: 39px;
+        p {
+          text-align: left;
+          height: 18px;
+          line-height: 20px;
+        }
+        p:first-of-type {
+          color: #545454;
+          font-weight: 700;
+          font-size: 18px;
+        }
+        p:last-of-type {
+          font-weight: 500;
+          font-size: 10px;
+          color: #a0a0a0;
+        }
+      }
+    }
+    button {
+      position: relative;
+      left: 90px;
+      width: 61px;
+      height: 20px;
+      background: #eef3ed;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      color: #b5c9b5;
+      .creditButton {
+        margin-left: 6px;
+      }
+    }
+    > div {
+      width: 241px;
+      height: 81px;
+      background: #ffffff;
+      border: 1px solid #e4e4e4;
+    }
+  }
+  .nameBox {
+    margin-top: 58px;
+    width: 241px;
+    height: 41px;
+    background: #ffffff;
+    input {
+      border: none;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+    }
+    .check {
+      position: relative;
+      top: -28px;
+      right: -100px;
+      margin-left: 6px;
+    }
+  }
+  .gameBox {
+    width: 241px;
+    height: 101px;
+    margin-top: 20px;
+    background: #fbfbfb;
+    border: 1px solid #eaeaea;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+    input[type="radio"] {
+      width: 14px;
+      height: 14px;
+    }
+    input[type="radio"] + label {
+      font-size: 12px;
+    }
+    label {
+      span {
+        margin-right: 4px;
+        position: relative;
+        top: 1px;
+        display: inline-block;
+        margin-left: 6px;
+      }
+    }
+    > div {
+      padding-left: 25px;
+      > div {
+        label {
+          svg {
+            position: relative;
+            top: 2px;
+            margin: 0px 4px 0px 10px;
+          }
+        }
+      }
+      > div:first-of-type {
+        padding-bottom: 10px;
+      }
+    }
+  }
+  .startBox {
+    width: 241px;
+    margin-top: 39px;
+    display: flex;
+    justify-content: end;
+    > button {
+      width: 60px;
+      height: 60px;
+      background: #ffffff;
+      border: 3px solid #338d5c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 30px;
+    }
+  }
+}
+
+//--------------- 메인
+.Ewxel#app {
+  background: url("@/assets/image/icon/back.svg");
+  background-position-y: -42px;
+  background-position-x: -1px;
+}
+.Ewxel {
+  input[type="radio"] {
+    background: #d9d9d9;
+  }
+  input[type="radio"] + label {
+    svg path {
+      fill: #a5a5a5;
+    }
+  }
+  input[type="radio"]:checked {
+    border: 3.5px solid #45a570;
+    background: #fff;
+  }
+  input[type="radio"]:checked + label {
+    font-weight: 600;
+    color: #31723f;
+    svg path {
+      fill: #45a570;
+    }
+  }
+  input[type="text"].inputValueNo {
+    color: #bababa;
+    border: 1px solid #e4e4e4;
+  }
+  .check.inputValueNo {
+    display: none;
+  }
+  input[type="text"] {
+    color: #585858;
+    border: 2px solid #45a570;
+  }
+  input[type="text"]:focus {
+    color: #bababa;
+    border: 1px solid #45a570;
+    outline: none;
+    border-radius: none;
+  }
+  nav {
+    background: #2b8453;
+    color: #97bba7;
+    .bug {
+      color: #a0c1af;
+    }
+  }
+  .skinBox {
+    background: #f1f1f1;
+    border: 1px solid #e6e6e6;
+    input[type="radio"]:checked + label {
+      color: #575555;
+    }
+    > div {
+      background: #fdfdfd;
+      border: 1px solid #e2e2e2;
+      border-radius: 2px;
+      p {
+        color: #b9b9b9;
+      }
+      > div {
+        color: #737373;
+      }
+    }
+  }
+  .gameBox {
+    input[type="radio"]:checked {
+      border: 5px solid #45a570;
+    }
+  }
+  .startBox {
+    > button,
+    button:disabled,
+    button:disabled:hover {
+      border: 3px solid #45a570;
+      background: #fff;
+      cursor: default;
+      .startButton path {
+        fill: #45a570;
+      }
+    }
+    > button:hover {
+      cursor: pointer;
+      background: #45a570;
+      .startButton path {
+        fill: #fff;
+      }
+    }
+  }
+}
+.Adude#app {
+  background: #1e1e1e;
+}
+.Adude {
+  input[type="radio"] {
+    background: #d9d9d9;
+  }
+  input[type="radio"] + label {
+    svg path {
+      fill: #a5a5a5;
+    }
+  }
+  input[type="radio"]:checked {
+    border: 3.5px solid #1473e6;
+    background: #fff;
+  }
+  input[type="radio"]:checked + label {
+    font-weight: 600;
+    color: #fff;
+    svg path {
+      fill: #1473e6;
+    }
+  }
+  input[type="text"].inputValueNo {
+    color: #bababa;
+    border: none;
+  }
+  .check.inputValueNo {
+    display: none;
+  }
+  .check path {
+    fill: #1473e6;
+  }
+  input[type="text"] {
+    color: #585858;
+    border: 2px solid #1473e6;
+    background: #101010;
+  }
+  input[type="text"]:focus {
+    color: #bababa;
+    border: 1px solid #1473e6;
+    outline: none;
+    border-radius: none;
+  }
+
+  nav {
+    background: #3a3a3a;
+    color: #838383;
+    .bug {
+      color: #9e9e9e;
+    }
+  }
+  .skinBox {
+    background: #3a3a3a;
+    border: 1px solid #3a3a3a;
+    input[type="radio"]:checked + label {
+      color: #b7b7b7;
+    }
+    > div {
+      background: #292929;
+      border: 1px solid #474747;
+      border-radius: 4px;
+      p {
+        color: #7c7c7c;
+      }
+      > div {
+        color: #8a8a8a;
+      }
+    }
+  }
+  .title {
+    > div {
+      background: #262626;
+      border: none;
+    }
+    button {
+      color: #888888;
+      background: none;
+      .creditButton path {
+        fill: #6a6a6a;
+      }
+    }
+  }
+  .gameBox {
+    background: #262626;
+    border: none;
+    input[type="radio"] + label {
+      color: #b5b5b5;
+    }
+    input[type="radio"]:checked {
+      border: 5px solid #1473e6;
+    }
+  }
+  .startBox {
+    > button,
+    button:disabled,
+    button:disabled:hover {
+      background: #1473e6;
+      border: 3px solid #1473e6;
+      cursor: default;
+      .startButton path {
+        fill: #fff;
+      }
+    }
+    > button:hover {
+      cursor: pointer;
+      background: #0b5fc5;
+      border: 3px solid #0b5fc5;
+    }
+  }
+}
+.Simple {
+  input[type="radio"] {
+    background: #d9d9d9;
+  }
+  input[type="radio"] + label {
+    svg path {
+      fill: #a5a5a5;
+    }
+  }
+  input[type="radio"]:checked {
+    border: 3.5px solid #b1b1b1;
+    background: #fff;
+  }
+  input[type="radio"]:checked + label {
+    font-weight: 600;
+    color: #6b6b6b;
+    svg path {
+      fill: #9d9d9d;
+    }
+  }
+  input[type="text"].inputValueNo {
+    color: #989898;
+    border-bottom: 1px solid #e4e4e4;
+  }
+  .check.inputValueNo {
+    display: none;
+  }
+  .check path {
+    fill: #909090;
+  }
+  input[type="text"] {
+    color: #585858;
+    border-bottom: 2px solid #ececec;
+  }
+  input[type="text"]:focus {
+    color: #7c7c7c;
+    border-bottom: 1px solid #ececec;
+    outline: none;
+    border-radius: none;
+  }
+  nav {
+    background: #efefef;
+    color: #7d7d7d;
+    .bug {
+      color: #858585;
+    }
+  }
+  .skinBox {
+    background: #fdfdfd;
+    border: 1px solid #f5f5f5;
+    input[type="radio"]:checked + label {
+      color: #575555;
+    }
+    > div {
+      background: #ffffff;
+      border: 1px solid #efefef;
+      border-radius: 2px;
+      p {
+        color: #7c7c7c;
+      }
+      > div {
+        color: #8a8a8a;
+      }
+    }
+  }
+  .title {
+    > div {
+      background: #f9f9f9;
+      border: none;
+    }
+    button {
+      color: #8a8a8a;
+      background: none;
+      .creditButton path {
+        fill: #b6b6b6;
+      }
+    }
+  }
+
+  .gameBox {
+    background: #f9f9f9;
+    border: none;
+    input[type="radio"] + label {
+      color: #898989;
+    }
+    input[type="radio"]:checked {
+      border: 5px solid #b1b1b1;
+    }
+  }
+  .startBox {
+    > button,
+    button:disabled,
+    button:disabled:hover {
+      border: 3px solid #cacaca;
+      cursor: default;
+      .startButton path {
+        fill: #cacaca;
+      }
+    }
+    > button:hover {
+      cursor: pointer;
+      background: #cacaca;
+      .startButton path {
+        fill: #fff;
+      }
+    }
+  }
+}

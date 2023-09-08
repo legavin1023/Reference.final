@@ -1,4 +1,4 @@
-# reference.final
+# reference_final
 
 ## Project setup
 ```
