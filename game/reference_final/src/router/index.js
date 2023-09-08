@@ -23,18 +23,18 @@ const routes = [
     },
   },
   {
-    path: "/5mok",
+    path: "/omokRoom",
     name: "5mok",
-    component: () => import("@/views/5mokGame.vue"),
+    component: () => import("@/views/5mokRoom.vue"),
     meta: {
       showSkinButtons: false,
       showNav: true,
     },
   },
   {
-    path: "/bingo",
+    path: "/bingoRoom",
     name: "bingo",
-    component: () => import("@/views/bingoGame.vue"),
+    component: () => import("@/views/bingoRoom.vue"),
     meta: {
       showSkinButtons: false,
       showNav: true,

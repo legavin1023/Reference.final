@@ -24,7 +24,8 @@ export default {
   },
   mounted() {
     console.log(this.getWords);
-    this.$store.dispatch("fetchWords");
+    const validation = Math.random() < 0.5 ? "fruit" : "num";
+    this.$store.dispatch("fetchWords", validation);
   },
   methods: {},
   computed: {

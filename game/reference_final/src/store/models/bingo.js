@@ -4,6 +4,7 @@ export default {
   state: {
     words: [],
     validation: "",
+    uuid: "",
   },
   getters: {
     getWords: (state) => state.words,
@@ -21,9 +22,25 @@ export default {
   actions: {
     async fetchWords(context, payload) {
       // RestApi 호출
+      const { validation } = payload;
       await api
         .get(`${process.env.VUE_APP_BASE_URL}/v1/api/game/bingo`, {
-          validation: context.state.validation, // 'validation' 값을 기반으로 쿼리 파라미터 설정
+          validation, // 'validation' 값을 기반으로 쿼리 파라미터 설정
+        })
+        .then((response) => {
+          context.commit("setWords", response.data); // API 응답으로 'words' 상태 업데이트
+          console.log(response.data, payload, context.state.validation);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    async secondId(context, payload) {
+      // RestApi 호출
+      const { uuid } = payload;
+      await api
+        .get(`${process.env.VUE_APP_BASE_URL}/v1/api/game/`, {
+          uuid, // 'validation' 값을 기반으로 쿼리 파라미터 설정
         })
         .then((response) => {
           context.commit("setWords", response.data); // API 응답으로 'words' 상태 업데이트

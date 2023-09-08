@@ -167,9 +167,6 @@ export default {
       this.selectedSkinProps = newVal;
     },
   },
-  updated() {
-    // console.log(this.selectedSkinProps);
-  },
   methods: {
     async start() {
       const payload = {
@@ -179,7 +176,7 @@ export default {
       console.log(payload);
       await this.$store.dispatch("newGame", payload);
       if (this.gameType) {
-        this.$router.push({ name: this.gameType });
+        this.$router.push({ path: this.gameType + "Room" });
       }
     },
   },

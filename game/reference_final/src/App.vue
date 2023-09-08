@@ -1,7 +1,7 @@
 <template>
   <div id="app" :class="selectedSkin">
     <div v-if="$route.meta.showNav">
-      <nav>
+      <nav :class="{ black: selectedSkin === 'Adude' }">
         <span v-if="selectedSkin === 'Ewxel'">
           <span class="skinLogo">로고</span> 통합문서1 -game
         </span>
@@ -17,7 +17,8 @@
         v-show="showBugModal"
         class="modal-overlay"
         @click="showBugModal = !showBugModal"
-      />
+      ></div>
+
       <div v-show="showBugModal" class="nugbugReport">
         <button @click="showBugModal = !showBugModal">x</button>
         <p>버그를 발견하셨나요?</p>

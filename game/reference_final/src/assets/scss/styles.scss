@@ -237,6 +237,26 @@ nav {
     }
   }
 }
+.skinBox.backBox {
+  width: 376px;
+  height: 48px;
+  border: 1px solid #e6e6e6;
+  background: #fff;
+  color: #3f3f3f;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: left;
+  align-items: center;
+  > button {
+    line-height: 48px;
+    cursor: pointer;
+  }
+  svg {
+    margin-right: 15px;
+    position: relative;
+    top: 5px;
+  }
+}
 //--------------- 네비
 //--------------- 메인
 .bodyBox {
@@ -244,13 +264,15 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   .title {
-    margin-top: 119px;
+    margin-top: 100px;
     > div {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      width: 376px;
+      padding-left: 39px;
+
       > div {
-        padding-left: 39px;
         p {
           text-align: left;
           height: 18px;
@@ -261,7 +283,7 @@ nav {
           font-weight: 700;
           font-size: 18px;
         }
-        p:last-of-type {
+        p:nth-of-type(2) {
           font-weight: 500;
           font-size: 10px;
           color: #a0a0a0;
@@ -289,6 +311,27 @@ nav {
       border: 1px solid #e4e4e4;
     }
   }
+  .title.gameTitle {
+    margin-top: 140px;
+    > div {
+      width: 241px;
+      height: 81px;
+      background: #ffffff;
+      border: 1px solid #e4e4e4;
+      padding-left: 0px;
+      > div {
+        width: 100%;
+        p {
+          text-align: center;
+        }
+        p:first-of-type {
+          font-size: 18px;
+          font-weight: 700;
+          color: #8f8f8f;
+        }
+      }
+    }
+  }
   .nameBox {
     margin-top: 58px;
     width: 241px;
@@ -305,6 +348,40 @@ nav {
       top: -28px;
       right: -100px;
       margin-left: 6px;
+    }
+  }
+
+  .nameBox.firstUser {
+    margin-top: 58px;
+    width: 241px;
+    height: 41px;
+    border: 1px solid #ebebeb;
+    background: #fafafa;
+    color: #b0b0b0;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 41px;
+    display: flex;
+    justify-content: center;
+    svg {
+      margin-right: 7px;
+      position: relative;
+      top: 14px;
+    }
+  }
+  .nameBox.secund {
+    margin-top: 20px;
+    border: 1px solid #2d9b5e;
+    background: #f3faf2;
+    color: #4b7051;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 41px;
+    button {
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      color: #4b7051;
     }
   }
   .gameBox {
@@ -464,6 +541,9 @@ nav {
   background: #1e1e1e;
 }
 .Adude {
+  .black {
+    background: #2c2c2c;
+  }
   input[type="radio"] {
     background: #d9d9d9;
   }
@@ -543,6 +623,17 @@ nav {
       }
     }
   }
+  .title.gameTitle {
+    > div {
+      background: #262626;
+      border: none;
+      > div {
+        p:first-of-type {
+          color: #8f8f8f;
+        }
+      }
+    }
+  }
   .gameBox {
     background: #262626;
     border: none;
@@ -568,6 +659,36 @@ nav {
       cursor: pointer;
       background: #0b5fc5;
       border: 3px solid #0b5fc5;
+    }
+  }
+  .nameBox {
+    background: #ffffff;
+  }
+
+  .nameBox.firstUser {
+    border: 1px solid #414141;
+    background: #2b2b2b;
+    color: #626262;
+    svg path {
+      fill: #626060;
+    }
+  }
+  .nameBox.secund {
+    border: none;
+    background: #1473e6;
+    color: #aed1fc;
+    button {
+      color: #aed1fc;
+    }
+  }
+  .skinBox.backBox {
+    border: none;
+    background: #3a3a3a;
+    span {
+      color: #a5a5a5;
+    }
+    svg path {
+      fill: #c2c2c2;
     }
   }
 }
@@ -677,5 +798,20 @@ nav {
         fill: #fff;
       }
     }
+  }
+}
+//로딩
+.loading-container {
+  img {
+    margin-top: 70px;
+
+    max-width: 31px; /* 이미지의 크기를 조절하세요. */
+    max-height: 31px;
+    animation: fadeInOut 1s ease infinite; /* 이미지가 순환하면서 나타나고 사라지는 애니메이션을 추가합니다. */
+  }
+  p {
+    color: #b7b7b7;
+    font-weight: 600;
+    margin-top: 12px;
   }
 }
