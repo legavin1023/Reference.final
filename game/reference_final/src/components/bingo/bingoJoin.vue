@@ -59,88 +59,80 @@
             </clipPath>
           </defs>
         </svg>
-        <p>{{ getUserName }}</p>
+        <p>{{ filstUserName }}</p>
       </div>
-      <div class="nameBox secund">
-        <button ref="copyButton">초대 URL 복사</button>
+      <div class="nameBox">
+        <input
+          v-model="userName"
+          type="text"
+          placeholder="닉네임을 입력하세요"
+          :class="{ userNameNo: !userName }"
+        />
+
+        <svg
+          class="check"
+          :class="{ userNameNo: !userName }"
+          width="12"
+          height="10"
+          viewBox="0 0 12 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 9.4L0 5.4L1.4 4L4 6.6L10.6 0L12 1.4L4 9.4Z"
+            fill="#43A45E"
+          />
+        </svg>
       </div>
-    </div>
-    <div class="loading-container">
-      <img
-        v-if="currentImageIndex === 0"
-        src="@/assets/image/loding/Property 1=Default.svg"
-        alt="Loading Image 1"
-      />
-      <img
-        v-if="currentImageIndex === 1"
-        src="@/assets/image/loding/Property 1=Variant2.svg"
-        alt="Loading Image 2"
-      />
-      <img
-        v-if="currentImageIndex === 2"
-        src="@/assets/image/loding/Property 1=Variant3.svg"
-        alt="Loading Image 3"
-      />
-      <img
-        v-if="currentImageIndex === 3"
-        src="@/assets/image/loding/Property 1=Variant4.svg"
-        alt="Loading Image 4"
-      />
-      <p>친구 기다리는중...</p>
+      <div class="startBox">
+        <button @click="start" :disabled="userName === ''">
+          <svg
+            class="startButton"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M8 16L6.575 14.6L12.175 9H0V7H12.175L6.575 1.4L8 0L16 8L8 16Z"
+              fill="#338D5C"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
-import Clipboard from "clipboard";
-import { mapGetters } from "vuex";
 export default {
   data() {
     return {
       userName: "",
-      currentImageIndex: 0, // 현재 표시할 이미지의 인덱스
-      serverURL: "", // 서버에서 받아온 주소를 저장할 변수
     };
   },
   computed: {
-    ...mapGetters(["getGameCode", "getUserName", "getUserName"]),
-  },
-  mounted() {
-    // 이미지를 순환하면서 애니메이션을 추가
-    setInterval(() => {
-      this.currentImageIndex = (this.currentImageIndex + 1) % 4;
-    }, 200); // 이미지 변경 간격(ms)을 조절할 수 있습니다.
-
-    // 예시: 서버에서 주소 가져오는 함수
-    this.fetchURLFromServer().then((url) => {
-      this.serverURL = url;
-
-      // data-clipboard-text 속성에 주소 설정
-      this.$refs.copyButton.setAttribute("data-clipboard-text", this.serverURL);
-
-      // clipboard.js 초기화
-      const clipboard = new Clipboard(this.$refs.copyButton);
-
-      clipboard.on("success", (e) => {
-        alert("복사되었습니다!");
-        e.clearSelection();
-      });
-
-      clipboard.on("error", () => {
-        alert("복사에 실패하였습니다. 다시 시도해주세요.");
-      });
-    });
+    roomCode() {
+      return this.$route.query.roomCode;
+    },
+    filstUserName() {
+      return this.$route.query.filstUserName;
+    },
   },
   methods: {
-    back() {
-      this.$router.push({ path: "reference.final" });
-    },
-    async fetchURLFromServer() {
-      const roomCode = `http://localhost:8080/bingoJoin?roomCode=${this.getGameCode}&filstUserName=${this.getUserName}`;
-      return roomCode;
+    async start() {
+      const payload = {
+        uuid: this.$route.query.roomCode,
+        userName: this.userName,
+      };
+      console.log(payload);
+      await this.$store.dispatch("secondId", payload);
+      await this.$store.dispatch("startBingoGame", payload);
+      this.$router.push({
+        path: "/bingoGame",
+        // query: { user: payload.uuid }, // query를 사용하여 uuid 값을 전달
+      });
     },
   },
 };
 </script>
-
-<style></style>

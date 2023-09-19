@@ -4,11 +4,12 @@ export default {
   state: {
     words: [],
     validation: "",
-    uuid: "",
+    secundUserName: "",
   },
   getters: {
     getWords: (state) => state.words,
     getValidation: (state) => state.validation,
+    getsecundUserName: (state) => state.secundUserName,
   },
   mutations: {
     setValidation(state) {
@@ -18,33 +19,47 @@ export default {
     setWords(state, data) {
       state.words = data;
     },
+    setsecundUserName(state, data) {
+      state.secundUserName = data;
+    },
   },
   actions: {
-    async fetchWords(context, payload) {
+    async secondId(context, payload) {
       // RestApi 호출
-      const { validation } = payload;
+      const { uuid, userName } = payload;
       await api
-        .get(`${process.env.VUE_APP_BASE_URL}/v1/api/game/bingo`, {
-          validation, // 'validation' 값을 기반으로 쿼리 파라미터 설정
+        .post(`${process.env.VUE_APP_BASE_URL}/v1/api/game/${uuid}`, {
+          userName,
         })
-        .then((response) => {
-          context.commit("setWords", response.data); // API 응답으로 'words' 상태 업데이트
-          console.log(response.data, payload, context.state.validation);
+        .then(() => {
+          context.commit("setsecundUserName", userName);
         })
         .catch((error) => {
           console.log(error);
         });
     },
-    async secondId(context, payload) {
+    async startBingoGame(context, payload) {
       // RestApi 호출
       const { uuid } = payload;
       await api
         .get(`${process.env.VUE_APP_BASE_URL}/v1/api/game/`, {
-          uuid, // 'validation' 값을 기반으로 쿼리 파라미터 설정
+          params: { uuid }, // 여기를 수정합니다.
         })
         .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    async fetchWords(context, payload) {
+      // RestApi 호출
+      const { validation } = payload;
+      await api
+        .get(`${process.env.VUE_APP_BASE_URL}/v1/api/game/bingo/${validation}`)
+        .then((response) => {
           context.commit("setWords", response.data); // API 응답으로 'words' 상태 업데이트
-          console.log(response.data, payload, context.state.validation);
+          console.log(response.data, validation);
         })
         .catch((error) => {
           console.log(error);

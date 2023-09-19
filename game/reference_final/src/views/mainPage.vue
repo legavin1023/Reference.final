@@ -54,15 +54,15 @@
       </div>
       <div class="nameBox">
         <input
-          v-model="userName"
+          v-model="filstUserName"
           type="text"
           placeholder="닉네임을 입력하세요"
-          :class="{ userNameNo: !userName }"
+          :class="{ userNameNo: !filstUserName }"
         />
 
         <svg
           class="check"
-          :class="{ userNameNo: !userName }"
+          :class="{ userNameNo: !filstUserName }"
           width="12"
           height="10"
           viewBox="0 0 12 10"
@@ -131,7 +131,7 @@
         </div>
       </div>
       <div class="startBox">
-        <button @click="start" :disabled="userName === ''">
+        <button @click="start" :disabled="filstUserName === ''">
           <svg
             class="startButton"
             width="16"
@@ -156,7 +156,7 @@ export default {
   props: ["selectedSkin"],
   data() {
     return {
-      userName: "",
+      filstUserName: "",
       gameType: "omok",
       showCreditModal: false,
       selectedSkinProps: this.selectedSkin,
@@ -170,11 +170,11 @@ export default {
   methods: {
     async start() {
       const payload = {
-        userName: this.userName,
+        userName: this.filstUserName,
         gameType: this.gameType,
       };
-      console.log(payload);
       await this.$store.dispatch("newGame", payload);
+
       if (this.gameType) {
         this.$router.push({ path: this.gameType + "Room" });
       }

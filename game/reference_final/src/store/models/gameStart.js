@@ -4,10 +4,12 @@ export default {
   state: {
     userName: "",
     gameType: "",
+    gameCode: null,
   },
   getters: {
     getUserName: (state) => state.userName,
     getGameType: (state) => state.gameType,
+    getGameCode: (state) => state.gameCode,
   },
   mutations: {
     setUserName(state, data) {
@@ -15,6 +17,9 @@ export default {
     },
     setGameType(state, data) {
       state.gameType = data;
+    },
+    setGameCode(state, data) {
+      state.gameCode = data;
     },
   },
   actions: {
@@ -27,9 +32,9 @@ export default {
           gameType,
         })
         .then((response) => {
-          console.log(response);
-          context.commit("setUserName", response.data.userName);
-          context.commit("setGameType", response.data.gameType);
+          context.commit("setUserName", userName);
+          context.commit("setGameType", gameType);
+          context.commit("setGameCode", response.data.data);
         })
         .catch((error) => {
           console.log(error);

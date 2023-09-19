@@ -41,6 +41,24 @@ const routes = [
     },
   },
   {
+    path: "/bingoJoin",
+    name: "bingoJoin",
+    component: () => import("@/components/bingo/bingoJoin.vue"), // 게임을 위한 컴포넌트로 수정
+    meta: {
+      showSkinButtons: false,
+      showNav: false,
+    },
+  },
+  {
+    path: "/bingoGame",
+    name: "bingoGame",
+    component: () => import("@/components/bingo/bimgoGame.vue"),
+    meta: {
+      showSkinButtons: false,
+      showNav: false,
+    },
+  },
+  {
     path: "/*",
     name: "404",
     component: () => import("@/views/404Page.vue"),

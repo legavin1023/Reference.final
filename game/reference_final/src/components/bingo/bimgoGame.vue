@@ -7,7 +7,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(word, index) in getWords" :key="index">
+        <tr v-for="(word, index) in getWords.data" :key="index">
           <td>{{ word }}</td>
         </tr>
       </tbody>
@@ -22,10 +22,9 @@ export default {
   data() {
     return {};
   },
-  mounted() {
-    console.log(this.getWords);
-    const validation = Math.random() < 0.5 ? "fruit" : "num";
-    this.$store.dispatch("fetchWords", validation);
+  async mounted() {
+    const validationValue = Math.random() < 0.5 ? "fruit" : "num";
+    await this.$store.dispatch("fetchWords", { validation: validationValue }); // 객체 형태로 validation 전달
   },
   methods: {},
   computed: {
